@@ -1,0 +1,15 @@
+import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import type { Request } from 'express';
+import { AppService } from './app.service';
+import { AuthGuard } from './guards/auth.guard';
+
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
+
+  @UseGuards(AuthGuard)
+  @Get()
+  someProtectedRoute(@Req() req: Request) {
+    return { message: 'Hello there', userId: req.userId as string };
+  }
+}
