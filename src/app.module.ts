@@ -6,6 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import config from './config/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { RulesModule } from './rules/rules.module';
 
 @Module({
   imports: [
@@ -31,6 +32,8 @@ import { AppService } from './app.service';
     }),
 
     AuthModule,
+
+    RulesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

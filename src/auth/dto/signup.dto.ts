@@ -8,7 +8,7 @@ export class SignupDto {
   email: string;
 
   @IsString()
-  @MinLength(6)
+  @MinLength(8)
   @Matches(/^(?=.*[0-9])/, {
     message: 'Password must contain at least one number',
   })

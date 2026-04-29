@@ -10,7 +10,7 @@ import { Request } from 'express';
 import { JwtPayload } from '../types/jwt-payload.interface';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthenticationGuard implements CanActivate {
   constructor(private readonly jwtService: JwtService) {}
 
   canActivate(context: ExecutionContext): boolean {
